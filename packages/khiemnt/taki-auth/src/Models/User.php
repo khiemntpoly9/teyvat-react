@@ -1,6 +1,6 @@
 <?php
 
-namespace Khiemnt\\TakiAuth\\Models;
+namespace Khiemnt\TakiAuth\Models;
 
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

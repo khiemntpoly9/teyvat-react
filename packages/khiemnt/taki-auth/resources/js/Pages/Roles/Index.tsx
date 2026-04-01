@@ -1,4 +1,4 @@
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
+import AuthenticatedLayout from '../../Layouts/AuthenticatedLayout';
 import { Head, Link } from '@inertiajs/react';
 import { ShieldAlert, ShieldCheck, MoreVertical, Plus, Search, Edit3, Trash2, Key, Users, Info, ArrowUpRight } from 'lucide-react';
 import { useState } from 'react';
@@ -31,7 +31,7 @@ export default function RolesIndex({ roles }: { roles: any[] }) {
                             className="w-full bg-slate-900 border border-white/5 rounded-2xl py-2.5 pl-10 pr-4 text-sm focus:ring-2 focus:ring-blue-500/30 focus:border-blue-500 outline-none transition-all"
                         />
                     </div>
-                    <button className="bg-gradient-to-tr from-blue-600 to-blue-500 text-white px-5 py-2.5 rounded-2xl text-sm font-bold flex items-center gap-2 hover:shadow-[0_10px_30px_rgba(37,99,235,0.2)] active:scale-95 transition-all">
+                    <button className="bg-linear-to-tr from-blue-600 to-blue-500 text-white px-5 py-2.5 rounded-2xl text-sm font-bold flex items-center gap-2 hover:shadow-[0_10px_30px_rgba(37,99,235,0.2)] active:scale-95 transition-all">
                         <Plus className="w-5 h-5" />
                         Tạo vai trò mới
                     </button>
@@ -42,7 +42,7 @@ export default function RolesIndex({ roles }: { roles: any[] }) {
                         <div key={role.id} className="group bg-slate-900/50 backdrop-blur-sm border border-white/5 rounded-[32px] overflow-hidden hover:bg-slate-900 transition-all hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
                             <div className="p-8">
                                 <div className="flex justify-between items-start mb-6">
-                                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-blue-600/20 to-purple-600/20 border border-blue-500/20 flex items-center justify-center p-3 group-hover:scale-110 transition-transform">
+                                    <div className="w-14 h-14 rounded-2xl bg-linear-to-tr from-blue-600/20 to-purple-600/20 border border-blue-500/20 flex items-center justify-center p-3 group-hover:scale-110 transition-transform">
                                         <ShieldCheck className="text-blue-400 w-full h-full" />
                                     </div>
                                     <button className="p-2 -mr-2 rounded-lg hover:bg-white/5 text-slate-500 hover:text-white transition-colors">
@@ -94,7 +94,7 @@ export default function RolesIndex({ roles }: { roles: any[] }) {
                     ))}
                 </div>
 
-                <div className="bg-gradient-to-r from-blue-900/20 to-slate-900 border border-blue-500/10 p-6 rounded-[32px] flex flex-col md:flex-row items-center gap-6 justify-between mt-12 relative overflow-hidden group">
+                <div className="bg-linear-to-r from-blue-900/20 to-slate-900 border border-blue-500/10 p-6 rounded-[32px] flex flex-col md:flex-row items-center gap-6 justify-between mt-12 relative overflow-hidden group">
                     <div className="absolute inset-0 bg-blue-600/5 blur-[80px] -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                     <div className="flex items-center gap-4 relative z-10">
                         <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 shrink-0 ring-4 ring-blue-500/10">

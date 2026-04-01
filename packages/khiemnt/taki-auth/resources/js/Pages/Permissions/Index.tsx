@@ -1,4 +1,4 @@
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
+import AuthenticatedLayout from '../../Layouts/AuthenticatedLayout';
 import { Head, Link } from '@inertiajs/react';
 import { Key, Plus, Search, Trash2, Edit3, Grid, Filter, Info, ShieldCheck, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
@@ -36,7 +36,7 @@ export default function PermissionsIndex({ permissions }: { permissions: any[] }
                          <button className="p-2.5 rounded-xl border border-white/5 bg-slate-900 text-slate-400 hover:text-white transition-colors">
                             <Filter className="w-5 h-5" />
                         </button>
-                        <button className="bg-gradient-to-tr from-blue-600 to-blue-500 text-white px-5 py-2.5 rounded-2xl text-sm font-bold flex items-center gap-2 hover:shadow-[0_10px_30px_rgba(37,99,235,0.2)] active:scale-95 transition-all">
+                        <button className="bg-linear-to-tr from-blue-600 to-blue-500 text-white px-5 py-2.5 rounded-2xl text-sm font-bold flex items-center gap-2 hover:shadow-[0_10px_30px_rgba(37,99,235,0.2)] active:scale-95 transition-all">
                             <Plus className="w-5 h-5" />
                             Thêm quyền mới
                         </button>
@@ -48,11 +48,11 @@ export default function PermissionsIndex({ permissions }: { permissions: any[] }
                         <table className="w-full text-left">
                             <thead>
                                 <tr className="border-b border-white/5">
-                                    <th className="px-8 py-5 text-[10px] font-bold text-slate-500 uppercase tracking-widest uppercase">ID</th>
-                                    <th className="px-8 py-5 text-[10px] font-bold text-slate-500 uppercase tracking-widest uppercase">Tên quyền hạn</th>
-                                    <th className="px-8 py-5 text-[10px] font-bold text-slate-500 uppercase tracking-widest uppercase">Guard</th>
-                                    <th className="px-8 py-5 text-[10px] font-bold text-slate-500 uppercase tracking-widest uppercase">Ngày tạo</th>
-                                    <th className="px-8 py-5 text-right text-[10px] font-bold text-slate-500 uppercase tracking-widest uppercase">Thao tác</th>
+                                    <th className="px-8 py-5 text-[10px] font-bold text-slate-500 tracking-widest uppercase">ID</th>
+                                    <th className="px-8 py-5 text-[10px] font-bold text-slate-500 tracking-widest uppercase">Tên quyền hạn</th>
+                                    <th className="px-8 py-5 text-[10px] font-bold text-slate-500 tracking-widest uppercase">Guard</th>
+                                    <th className="px-8 py-5 text-[10px] font-bold text-slate-500 tracking-widest uppercase">Ngày tạo</th>
+                                    <th className="px-8 py-5 text-right text-[10px] font-bold text-slate-500 tracking-widest uppercase">Thao tác</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-white/5">

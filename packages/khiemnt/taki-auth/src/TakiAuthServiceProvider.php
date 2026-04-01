@@ -1,6 +1,6 @@
 <?php
 
-namespace Khiemnt\\TakiAuth;
+namespace Khiemnt\TakiAuth;
 
 use Illuminate\Support\ServiceProvider;
 

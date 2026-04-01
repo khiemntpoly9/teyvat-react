@@ -1,8 +1,21 @@
 import { Head, Link, useForm } from '@inertiajs/react';
-import { Chrome, Github, Lock, Mail, ArrowRight, Github as GithubIcon } from 'lucide-react';
+import {
+    Chrome,
+    Github,
+    Lock,
+    Mail,
+    ArrowRight,
+    Github as GithubIcon,
+} from 'lucide-react';
 import { FormEventHandler } from 'react';
 
-export default function Login({ status, canResetPassword }: { status?: string; canResetPassword?: boolean }) {
+export default function Login({
+    status,
+    canResetPassword,
+}: {
+    status?: string;
+    canResetPassword?: boolean;
+}) {
     const { data, setData, post, processing, errors, reset } = useForm({
         email: '',
         password: '',
@@ -17,82 +30,112 @@ export default function Login({ status, canResetPassword }: { status?: string; c
     };
 
     return (
-        <div className="min-h-screen bg-slate-950 flex flex-col justify-center items-center p-6 relative overflow-hidden">
+        <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-slate-950 p-6">
             {/* Background Decorations */}
-            <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/20 blur-[120px] rounded-full animate-pulse" />
-            <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-600/20 blur-[120px] rounded-full animate-pulse" />
+            <div className="absolute top-[-10%] left-[-10%] h-[40%] w-[40%] animate-pulse rounded-full bg-blue-600/20 blur-[120px]" />
+            <div className="absolute right-[-10%] bottom-[-10%] h-[40%] w-[40%] animate-pulse rounded-full bg-purple-600/20 blur-[120px]" />
 
             <Head title="Đăng nhập" />
 
-            <div className="w-full max-w-md z-10">
-                <div className="text-center mb-10">
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-tr from-blue-600 to-purple-600 mb-6 shadow-lg shadow-blue-500/20 ring-1 ring-white/20">
-                        <Lock className="text-white w-8 h-8" />
+            <div className="z-10 w-full max-w-md">
+                <div className="mb-10 text-center">
+                    <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-tr from-blue-600 to-purple-600 shadow-lg ring-1 shadow-blue-500/20 ring-white/20">
+                        <Lock className="h-8 w-8 text-white" />
                     </div>
-                    <h1 className="text-3xl font-bold text-white tracking-tight">Chào mừng trở lại</h1>
-                    <p className="text-slate-400 mt-2">Vui lòng đăng nhập vào tài khoản của bạn</p>
+                    <h1 className="text-3xl font-bold tracking-tight text-white">
+                        Chào mừng trở lại
+                    </h1>
+                    <p className="mt-2 text-slate-400">
+                        Vui lòng đăng nhập vào tài khoản của bạn
+                    </p>
                 </div>
 
-                <div className="bg-slate-900/50 backdrop-blur-xl border border-white/10 p-8 rounded-3xl shadow-2xl space-y-6">
+                <div className="space-y-6 rounded-3xl border border-white/10 bg-slate-900/50 p-8 shadow-2xl backdrop-blur-xl">
                     <form onSubmit={submit} className="space-y-5">
                         <div>
-                            <label className="block text-sm font-medium text-slate-300 mb-1.5 ml-1">Email</label>
-                            <div className="relative group">
-                                <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500 group-focus-within:text-blue-500 transition-colors" />
+                            <label className="mb-1.5 ml-1 block text-sm font-medium text-slate-300">
+                                Email
+                            </label>
+                            <div className="group relative">
+                                <Mail className="absolute top-1/2 left-3.5 h-5 w-5 -translate-y-1/2 text-slate-500 transition-colors group-focus-within:text-blue-500" />
                                 <input
                                     type="email"
                                     name="email"
                                     value={data.email}
-                                    onChange={(e) => setData('email', e.target.value)}
-                                    className="w-full bg-slate-800/50 border border-slate-700 text-white rounded-xl py-3 pl-11 pr-4 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition-all placeholder:text-slate-600"
+                                    onChange={(e) =>
+                                        setData('email', e.target.value)
+                                    }
+                                    className="w-full rounded-xl border border-slate-700 bg-slate-800/50 py-3 pr-4 pl-11 text-white transition-all outline-none placeholder:text-slate-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50"
                                     placeholder="your@email.com"
                                     required
                                 />
                             </div>
-                            {errors.email && <p className="text-red-400 text-xs mt-1.5 ml-1">{errors.email}</p>}
+                            {errors.email && (
+                                <p className="mt-1.5 ml-1 text-xs text-red-400">
+                                    {errors.email}
+                                </p>
+                            )}
                         </div>
 
                         <div>
-                            <div className="flex justify-between items-center mb-1.5 ml-1">
-                                <label className="block text-sm font-medium text-slate-300">Mật khẩu</label>
+                            <div className="mb-1.5 ml-1 flex items-center justify-between">
+                                <label className="block text-sm font-medium text-slate-300">
+                                    Mật khẩu
+                                </label>
                                 {canResetPassword && (
-                                    <Link href={route('password.request')} className="text-xs text-blue-400 hover:text-blue-300 transition-colors">
+                                    <Link
+                                        href={route('password.request')}
+                                        className="text-xs text-blue-400 transition-colors hover:text-blue-300"
+                                    >
                                         Quên mật khẩu?
                                     </Link>
                                 )}
                             </div>
-                            <div className="relative group">
-                                <Lock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500 group-focus-within:text-blue-500 transition-colors" />
+                            <div className="group relative">
+                                <Lock className="absolute top-1/2 left-3.5 h-5 w-5 -translate-y-1/2 text-slate-500 transition-colors group-focus-within:text-blue-500" />
                                 <input
                                     type="password"
                                     name="password"
                                     value={data.password}
-                                    onChange={(e) => setData('password', e.target.value)}
-                                    className="w-full bg-slate-800/50 border border-slate-700 text-white rounded-xl py-3 pl-11 pr-4 focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition-all placeholder:text-slate-600"
+                                    onChange={(e) =>
+                                        setData('password', e.target.value)
+                                    }
+                                    className="w-full rounded-xl border border-slate-700 bg-slate-800/50 py-3 pr-4 pl-11 text-white transition-all outline-none placeholder:text-slate-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50"
                                     placeholder="••••••••"
                                     required
                                 />
                             </div>
-                            {errors.password && <p className="text-red-400 text-xs mt-1.5 ml-1">{errors.password}</p>}
+                            {errors.password && (
+                                <p className="mt-1.5 ml-1 text-xs text-red-400">
+                                    {errors.password}
+                                </p>
+                            )}
                         </div>
 
                         <div className="flex items-center">
                             <input
                                 type="checkbox"
                                 id="remember"
-                                className="w-4 h-4 rounded border-slate-700 bg-slate-800 text-blue-600 focus:ring-blue-500/50 focus:ring-offset-slate-900"
-                                onChange={(e) => setData('remember', e.target.checked)}
+                                className="h-4 w-4 rounded border-slate-700 bg-slate-800 text-blue-600 focus:ring-blue-500/50 focus:ring-offset-slate-900"
+                                onChange={(e) =>
+                                    setData('remember', e.target.checked)
+                                }
                             />
-                            <label htmlFor="remember" className="ml-2 text-sm text-slate-400">Ghi nhớ đăng nhập</label>
+                            <label
+                                htmlFor="remember"
+                                className="ml-2 text-sm text-slate-400"
+                            >
+                                Ghi nhớ đăng nhập
+                            </label>
                         </div>
 
                         <button
                             type="submit"
                             disabled={processing}
-                            className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-semibold py-3.5 rounded-xl shadow-lg shadow-blue-500/25 transition-all active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none flex items-center justify-center group"
+                            className="group flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 py-3.5 font-semibold text-white shadow-lg shadow-blue-500/25 transition-all hover:from-blue-500 hover:to-blue-400 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50"
                         >
                             Đăng nhập
-                            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                         </button>
                     </form>
 
@@ -101,31 +144,36 @@ export default function Login({ status, canResetPassword }: { status?: string; c
                             <div className="w-full border-t border-slate-700"></div>
                         </div>
                         <div className="relative flex justify-center text-xs uppercase">
-                            <span className="bg-slate-900 px-2 text-slate-500">Hoặc tiếp tục với</span>
+                            <span className="bg-slate-900 px-2 text-slate-500">
+                                Hoặc tiếp tục với
+                            </span>
                         </div>
                     </div>
 
                     <div className="grid grid-cols-2 gap-4">
                         <a
                             href="/auth/google/redirect"
-                            className="flex items-center justify-center gap-2 bg-slate-800/50 border border-slate-700 text-slate-200 hover:bg-slate-700/50 hover:border-slate-600 py-3 rounded-xl transition-all active:scale-[0.98]"
+                            className="flex items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-800/50 py-3 text-slate-200 transition-all hover:border-slate-600 hover:bg-slate-700/50 active:scale-[0.98]"
                         >
-                            <Chrome className="w-5 h-5 text-red-500" />
+                            <Chrome className="h-5 w-5 text-red-500" />
                             <span className="text-sm font-medium">Google</span>
                         </a>
                         <a
                             href="/auth/github/redirect"
-                            className="flex items-center justify-center gap-2 bg-slate-800/50 border border-slate-700 text-slate-200 hover:bg-slate-700/50 hover:border-slate-600 py-3 rounded-xl transition-all active:scale-[0.98]"
+                            className="flex items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-800/50 py-3 text-slate-200 transition-all hover:border-slate-600 hover:bg-slate-700/50 active:scale-[0.98]"
                         >
-                            <Github className="w-5 h-5 text-white" />
+                            <Github className="h-5 w-5 text-white" />
                             <span className="text-sm font-medium">Github</span>
                         </a>
                     </div>
                 </div>
 
-                <p className="text-center mt-8 text-slate-500 text-sm">
+                <p className="mt-8 text-center text-sm text-slate-500">
                     Bạn chưa có tài khoản?{' '}
-                    <Link href={route('register')} className="text-blue-400 font-medium hover:text-blue-300 transition-colors">
+                    <Link
+                        href={route('register')}
+                        className="font-medium text-blue-400 transition-colors hover:text-blue-300"
+                    >
                         Đăng ký ngay
                     </Link>
                 </p>
