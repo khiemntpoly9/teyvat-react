@@ -12,5 +12,7 @@
             "email": "trungkhiem1412@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "spatie/laravel-permission": "^7.2"
+    }
 }
