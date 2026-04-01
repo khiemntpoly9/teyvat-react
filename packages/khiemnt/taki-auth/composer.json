@@ -1,0 +1,16 @@
+{
+    "name": "khiemnt/taki-auth",
+    "description": "Xác thực, quản lý, phân quyền người dùng",
+    "autoload": {
+        "psr-4": {
+            "Khiemnt\\TakiAuth\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Trung Khiêm",
+            "email": "trungkhiem1412@gmail.com"
+        }
+    ],
+    "require": {}
+}

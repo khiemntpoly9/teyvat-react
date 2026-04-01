@@ -1,0 +1,16 @@
+{
+    "name": "khiemnt/taki-shop",
+    "description": "Quản lý sản phẩm, đơn hàng, giỏ hàng",
+    "autoload": {
+        "psr-4": {
+            "Khiemnt\\TakiShop\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Trung Khiêm",
+            "email": "trungkhiem1412@gmail.com"
+        }
+    ],
+    "require": {}
+}

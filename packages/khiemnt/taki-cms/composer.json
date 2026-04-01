@@ -1,0 +1,16 @@
+{
+    "name": "khiemnt/taki-cms",
+    "description": "Quản lý nội dung, bài viết, danh mục, media",
+    "autoload": {
+        "psr-4": {
+            "Khiemnt\\TakiCms\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Trung Khiêm",
+            "email": "trungkhiem1412@gmail.com"
+        }
+    ],
+    "require": {}
+}
