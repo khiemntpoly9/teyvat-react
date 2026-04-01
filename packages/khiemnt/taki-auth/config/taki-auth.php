@@ -11,7 +11,7 @@ return [
     */
 
     'models' => [
-        'user' => \Khiemnt\TakiAuth\Models\TakiUser::class,
+        'user' => \Khiemnt\TakiAuth\Models\User::class,
     ],
 
     'table_names' => [

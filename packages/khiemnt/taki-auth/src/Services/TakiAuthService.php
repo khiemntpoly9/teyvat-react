@@ -117,4 +117,26 @@ class TakiAuthService
             return $user;
         });
     }
+
+    /**
+     * Cập nhật mật khẩu cho người dùng.
+     */
+    public function updatePassword(User $user, string $password): void
+    {
+        $account = $user->accounts()->where('provider_id', 'credentials')->first();
+
+        if ($account) {
+            $account->update(['password' => $password]);
+        }
+    }
+
+    /**
+     * Cập nhật thông tin profile cho người dùng.
+     */
+    public function updateProfile(User $user, array $data): User
+    {
+        $user->update($data);
+
+        return $user;
+    }
 }

@@ -1,9 +1,9 @@
 <?php
 
 use App\Providers\AppServiceProvider;
-use App\Providers\FortifyServiceProvider;
+use Khiemnt\TakiAuth\TakiAuthServiceProvider;
 
 return [
     AppServiceProvider::class,
-    FortifyServiceProvider::class,
+    TakiAuthServiceProvider::class,
 ];

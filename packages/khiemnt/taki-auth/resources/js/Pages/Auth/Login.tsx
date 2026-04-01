@@ -132,7 +132,7 @@ export default function Login({
                         <button
                             type="submit"
                             disabled={processing}
-                            className="group flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 py-3.5 font-semibold text-white shadow-lg shadow-blue-500/25 transition-all hover:from-blue-500 hover:to-blue-400 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50"
+                            className="group flex w-full items-center justify-center rounded-xl bg-linear-to-r from-blue-600 to-blue-500 py-3.5 font-semibold text-white shadow-lg shadow-blue-500/25 transition-all hover:from-blue-500 hover:to-blue-400 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50"
                         >
                             Đăng nhập
                             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

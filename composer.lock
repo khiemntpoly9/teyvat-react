@@ -1301,9 +1301,10 @@
             "dist": {
                 "type": "path",
                 "url": "packages/khiemnt/taki-auth",
-                "reference": "d8dd927722487be3b288f3eaa8911f1247a9f769"
+                "reference": "dd4cd54c0ba154177965f80922bcc1f2f0435c36"
             },
             "require": {
+                "laravel/fortify": "^1.34",
                 "laravel/socialite": "^5.26",
                 "spatie/laravel-permission": "^7.2"
             },
